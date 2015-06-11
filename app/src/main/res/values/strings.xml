@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MeetingRoom</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_meeting_rooms">MeetingRooms</string>
+    <string name="device_SSO">AirWatch Device SSO Completed for: </string>
+    <string name="auth_type">Authentication Type: </string>
+    <string name="secure_tunnel">Secure Tunnel Established for: </string>
+</resources>
