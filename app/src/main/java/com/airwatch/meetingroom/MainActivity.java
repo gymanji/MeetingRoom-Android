@@ -1,17 +1,37 @@
 package com.airwatch.meetingroom;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private TextView tvContinue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        createTextViewReferences();
+
+        tvContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MeetingRooms.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+
+    }
+
+    private void createTextViewReferences() {
+        tvContinue = (TextView) findViewById(R.id.tvContinue);
     }
 
 
