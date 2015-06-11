@@ -8,17 +8,19 @@
         android:id="@+id/background_color"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blue4" />
+        android:background="@color/blue4"
+        android:contentDescription="@string/blue_background"/>
 
     <ImageView
         android:id="@+id/white_border"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginRight="50dp"
-        android:background="@color/white"/>
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/white"
+        android:contentDescription="@string/white_background"/>
 
     <ImageView
         android:id="@+id/vmwLogo"
@@ -28,8 +30,91 @@
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
         android:src="@drawable/awvmwarelogo"
-        android:layout_alignTop="@id/white_border"/>
+        android:layout_alignTop="@id/white_border"
+        android:contentDescription="@string/aw_logo"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/vmwLogo"
+        android:paddingTop="30dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="15"
+            style="@style/smallTVLayout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/device_SSO"/>
+            <TextView
+                android:id="@+id/tvUserCred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/check_desc"
+
+                android:src="@drawable/check" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="15"
+            style="@style/smallTVLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/auth_type"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/lock_symbol"
+                android:src="@drawable/check" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="15"
+            style="@style/smallTVLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/secure_tunnel"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@drawable/lock" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tap_to_continue"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="35dp"
+            android:layout_weight="55"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="20dp"
+            android:clickable="true"/>
+        <!--android:visibility="gone"-->
+        <!--/>-->
+
+    </LinearLayout>
 
 </RelativeLayout>
 

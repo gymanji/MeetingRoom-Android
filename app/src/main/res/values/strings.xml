@@ -5,4 +5,10 @@
     <string name="device_SSO">AirWatch Device SSO Completed for: </string>
     <string name="auth_type">Authentication Type: </string>
     <string name="secure_tunnel">Secure Tunnel Established for: </string>
+    <string name="tap_to_continue">Tap to continue</string>
+    <string name="check_desc">Checkmark</string>
+    <string name="lock_symbol">Lock symbol</string>
+    <string name="blue_background">Blue background</string>
+    <string name="white_background">White background</string>
+    <string name="aw_logo">VMW Logo</string>
 </resources>
