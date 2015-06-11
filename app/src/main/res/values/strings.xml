@@ -1,4 +1,6 @@
 <resources>
+
+    <!--MainActivity Strings-->
     <string name="app_name">MeetingRoom</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_meeting_rooms">MeetingRooms</string>
@@ -12,7 +14,20 @@
     <string name="blue_background">Blue background</string>
     <string name="white_background">White background</string>
     <string name="aw_logo">VMW Logo</string>
+
+    <!--MeetingRoom Strings-->
     <string name="bes_server_string">atl02demobest06.airwatch.demo</string>
     <string name="blank_default">---</string>
     <string name="available_now">Available Now</string>
+
+    <!--Conference Room Strings-->
+    <string name="lincoln_conference_room">Lincoln Conference Room</string>
+    <string name="lincoln_location">TOWER 2, FLOOR 20, ROOM 210A</string>
+    <string name="kennedy_conference_room">Kennedy Conference Room</string>
+    <string name="kennedy_location">TOWER 1, FLOOR 13, ROOM 101B</string>
+    <string name="clinton_conference_room">Clinton Conference Room</string>
+    <string name="clinton_location">TOWER 1, FLOOR 1, ROOM 101A</string>
+    <string name="jefferson_conference_room">Jefferson Conference Room</string>
+    <string name="jefferson_location">TOWER 3, FLOOR 31, ROOM 310F</string>
+
 </resources>

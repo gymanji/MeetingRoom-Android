@@ -1,114 +1,116 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.airwatch.meetingroom.MeetingRooms">
 
     <LinearLayout
         android:id="@+id/llServerAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/layoutborder"
         android:orientation="horizontal"
         android:paddingBottom="3dp"
-        android:paddingTop="3dp"
-        android:background="@drawable/layoutborder">
+        android:paddingTop="3dp">
 
         <ImageView
             android:id="@+id/ivCloud"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="10"
+            android:layout_weight="5"
             android:clickable="true"
-            android:src="@drawable/cloud"/>
+            android:src="@drawable/cloud" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="90"
+            android:layout_weight="95"
             android:gravity="center_vertical"
-            android:text="@string/bes_server_string"/>
+            android:text="@string/bes_server_string" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/llSecondBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@id/llServerAddress"
+        android:background="@drawable/layoutborder"
+        android:orientation="horizontal"
         android:paddingBottom="3dp"
-        android:paddingTop="3dp"
-        android:background="@drawable/layoutborder">
+        android:paddingTop="3dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="33">
+            android:layout_weight="30">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:src="@drawable/location"/>
+                android:layout_weight="20"
+                android:src="@drawable/location" />
 
             <TextView
                 android:id="@+id/tvCurrentLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="90"
-                android:text="@string/blank_default"
-                android:gravity="center_vertical"/>
-
+                android:layout_weight="80"
+                android:gravity="center_vertical"
+                android:text="@string/blank_default" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="33">
+            android:layout_weight="40">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="20"
-                android:src="@drawable/calendar"/>
+                android:src="@drawable/calendar" />
+
             <TextView
+                android:id="@+id/tvCurrentTime"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="30"
-                android:text="TIME"
-                android:gravity="center_vertical"/>
+                android:layout_weight="40"
+                android:gravity="center_vertical"
+                android:text="TIME" />
 
             <TextView
                 android:id="@+id/tvCurrentDate"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="50"
-                android:text="@string/blank_default"
-                android:gravity="center_vertical|right"/>
+                android:layout_weight="40"
+                android:gravity="center_vertical|right"
+                android:text="DATE" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="33">
+            android:layout_weight="30">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="20"
-                android:src="@drawable/filter"/>
+                android:src="@drawable/filter" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="80"
-                android:text="@string/available_now"
                 android:gravity="center_vertical"
-                />
+                android:text="@string/available_now" />
 
         </LinearLayout>
 
@@ -116,9 +118,61 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llSecondBar"
+        android:layout_marginTop="10dp">
+
+        <!--LL Base config for individual row-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="30" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="40"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/ConferenceRoomTitle"
+                    android:text="@string/lincoln_conference_room" />
+
+                <TextView
+                    style="@style/ConferenceRoomSubTitle"
+                    android:text="@string/lincoln_location" />
+
+            </LinearLayout>
 
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="30"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/zerooffive"
+                    android:layout_gravity="right|top"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Unavailable"
+                    android:layout_gravity="bottom"
+                    android:gravity="right"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
 
 
     </ScrollView>
