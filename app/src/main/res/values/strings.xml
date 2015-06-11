@@ -12,4 +12,7 @@
     <string name="blue_background">Blue background</string>
     <string name="white_background">White background</string>
     <string name="aw_logo">VMW Logo</string>
+    <string name="bes_server_string">atl02demobest06.airwatch.demo</string>
+    <string name="blank_default">---</string>
+    <string name="available_now">Available Now</string>
 </resources>
