@@ -19,13 +19,40 @@
     <string name="bes_server_string">atl02demobest06.airwatch.demo</string>
     <string name="blank_default">---</string>
     <string name="available_now">Available Now</string>
+    <string name="available">Available</string>
+    <string name="unavailable">Unavailable</string>
+
+    <string-array name="room_status">
+        <item>@string/available</item>
+        <item>@string/unavailable</item>
+    </string-array>
+
+
+    <string name="location_symbol">Location Symbol</string>
+    <string name="calendar_symbol">Calendar Symbol</string>
+    <string name="filter_symbol">Filter Symbol</string>
+    <string name="room_image">Room Image</string>
+    <string name="star_count">Star Count</string>
+    <string name="projector">Projector</string>
+    <string name="conferencecall">Conference Call Ready</string>
+    <string name="touch_screen">Touch Screen SmartTV</string>
+    <string name="wifi_eth">Wifi &amp; Ethernet</string>
+    <string name="video_conf">Video Conference Ready</string>
+    <string name="seats4">Seats 4</string>
+    <string name="seats8">Seats 8</string>
+    <string name="seats14">Seats 14</string>
+    <string name="seats144">Seats 144</string>
+    <string name="lincoln_details">Seats 4 \nProjector \nConference Call Ready\nTouch Screen SmartTV \nWiFi &amp; Ethernet \nVideo Conference Ready</string>
+    <string name="kennedy_details">Seats 8 \nProjector \nConference Call Ready\nTouch Screen SmartTV \nWiFi &amp; Ethernet \nVideo Conference Ready</string>
+    <string name="jefferson_details">Seats 14 \nProjector \nConference Call Ready\nTouch Screen SmartTV \nWiFi &amp; Ethernet \nVideo Conference Ready</string>
+    <string name="clinton_details">Seats 144 \nProjector \nConference Call Ready\nTouch Screen SmartTV \nWiFi &amp; Ethernet \nVideo Conference Ready</string>
 
     <!--Conference Room Strings-->
     <string name="lincoln_conference_room">Lincoln Conference Room</string>
     <string name="lincoln_location">TOWER 2, FLOOR 20, ROOM 210A</string>
     <string name="kennedy_conference_room">Kennedy Conference Room</string>
     <string name="kennedy_location">TOWER 1, FLOOR 13, ROOM 101B</string>
-    <string name="clinton_conference_room">Clinton Conference Room</string>
+    <string name="clinton_conference_room">Reagan Conference Room</string>
     <string name="clinton_location">TOWER 1, FLOOR 1, ROOM 101A</string>
     <string name="jefferson_conference_room">Jefferson Conference Room</string>
     <string name="jefferson_location">TOWER 3, FLOOR 31, ROOM 310F</string>
