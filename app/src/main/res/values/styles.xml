@@ -6,8 +6,10 @@
 
     <style name="smallTVLayout">
         <item name="android:textSize">14sp</item>
-        <!--<item name="android:paddingTop">15dp</item>-->
-        <!--<item name="android:paddingBottom">15dp</item>-->
+    </style>
+
+    <style name="lgTVLayout">
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="ConferenceRoomTitle">
@@ -21,6 +23,19 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ConferenceRoomTitleLG">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="ConferenceRoomSubTitleLG">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>

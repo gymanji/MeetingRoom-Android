@@ -16,11 +16,13 @@
     <string name="aw_logo">VMW Logo</string>
 
     <!--MeetingRoom Strings-->
-    <string name="bes_server_string">atl02demobest06.airwatch.demo</string>
+    <string name="bes_server_string">atl02demobes06.airwatch.demo</string>
     <string name="blank_default">---</string>
     <string name="available_now">Available Now</string>
     <string name="available">Available</string>
     <string name="unavailable">Unavailable</string>
+    <string name="gps_disabled">GPS Disabled</string>
+    <string name="gps_enabled">GPS Enalbed</string>
 
     <string-array name="room_status">
         <item>@string/available</item>
