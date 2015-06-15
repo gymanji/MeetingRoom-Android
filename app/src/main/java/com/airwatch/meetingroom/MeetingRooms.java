@@ -22,10 +22,7 @@ public class MeetingRooms extends ActionBarActivity  {
 //public class MeetingRooms extends Activity implements LocationListener {
 
     private TextView tvCurrentDate, tvCurrentTime, tvCurrentLocation, tvBESURL;
-    private LocationManager locationManager;
-    private String cityName;
-    private double currentLongitude, currentLatitude;
-    Location getLastLocation;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +42,22 @@ public class MeetingRooms extends ActionBarActivity  {
 
 
     private void getLocationDetails() {
-        locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        double currentLongitude, currentLatitude;
+        Location getLastLocation;
+        boolean gpsEnabled;
+
+        LocationManager locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         getLastLocation = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-        if (getLastLocation == null) {
+        gpsEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+        if (getLastLocation == null | gpsEnabled == false) {
             Log.d("GPS", "getLastLocation is null");
             tvCurrentLocation.setText(R.string.gps_undetectable);
         } else {
             currentLatitude = getLastLocation.getLatitude();
-            String latitude = String.valueOf(currentLatitude);
-            Log.d("GPS Lat - ", latitude);
+            currentLongitude = getLastLocation.getLongitude();
 
-            cityName = null;
+            String cityName = null;
             Geocoder gcd = new Geocoder(getBaseContext(), Locale.getDefault());
             List<Address> addresses;
             try {
