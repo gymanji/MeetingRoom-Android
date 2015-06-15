@@ -1,30 +1,31 @@
 package com.airwatch.meetingroom;
 
-import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.location.Address;
-import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-//public class MeetingRooms extends Activity {
-public class MeetingRooms extends Activity implements LocationListener {
 
-    private TextView tvCurrentDate, tvCurrentTime, tvCurrentLocation;
+public class MeetingRooms extends ActionBarActivity  {
+//public class MeetingRooms extends Activity implements LocationListener {
+
+    private TextView tvCurrentDate, tvCurrentTime, tvCurrentLocation, tvBESURL;
     private LocationManager locationManager;
-    private String provider, cityName;
-    private double latitude, longitude;
-    Location location;
+    private String cityName;
+    private double currentLongitude, currentLatitude;
+    Location getLastLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,50 +34,54 @@ public class MeetingRooms extends Activity implements LocationListener {
 
         createTextViewReferences();
 
-        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-        Criteria criteria = new Criteria();
-        provider = locationManager.getBestProvider(criteria, false);
-        location = locationManager.getLastKnownLocation(provider);
+//        Adding compatibility for pre-KitKat devices to support copying string from MAG address
+//        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+        tvBESURL.setKeyListener(null);
+        tvBESURL.setFocusable(true);
 
-        if (location != null) {
-//            Log.d("GPS", "is enabled");
-//            tvCurrentLocation.setText(R.string.gps_enabled);
-            onLocationChanged(location);
-            Log.d("GPS", "Latitude:" + latitude);
-            Log.d("GPS", "Longitude:" + longitude);
+        getLocationDetails();
 
+}
+
+
+    private void getLocationDetails() {
+        locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        getLastLocation = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+        if (getLastLocation == null) {
+            Log.d("GPS", "getLastLocation is null");
+            tvCurrentLocation.setText(R.string.gps_undetectable);
         } else {
-//            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-//            startActivity(intent);
-            tvCurrentLocation.setText(R.string.gps_disabled);
+            currentLatitude = getLastLocation.getLatitude();
+            String latitude = String.valueOf(currentLatitude);
+            Log.d("GPS Lat - ", latitude);
+
+            cityName = null;
+            Geocoder gcd = new Geocoder(getBaseContext(), Locale.getDefault());
+            List<Address> addresses;
+            try {
+                addresses = gcd.getFromLocation(currentLatitude, currentLongitude, 1);
+                if (addresses.size() > 0) {
+                    System.out.println(addresses.get(0).getLocality());
+                    cityName = addresses.get(0).getLocality();
+                    Log.d("GPS", cityName);
+                    tvCurrentLocation.setText(cityName);
+                } else {
+                    tvCurrentLocation.setText(R.string.gps_undetectable);
+//                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+//                startActivity(intent);
+                }
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
         }
     }
 
-    public void onLocationChanged(Location location) {
-        latitude = (location.getLatitude());
-        longitude = (location.getLongitude());
-        getCityName();
-    }
-
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-
-    }
-
-    @Override
-    public void onProviderEnabled(String provider) {
-
-    }
-
-    @Override
-    public void onProviderDisabled(String provider) {
-
-    }
 
     private void createTextViewReferences() {
         tvCurrentDate = (TextView) findViewById(R.id.tvCurrentDate);
         tvCurrentTime = (TextView) findViewById(R.id.tvCurrentTime);
         tvCurrentLocation = (TextView) findViewById(R.id.tvCurrentLocation);
+        tvBESURL = (TextView) findViewById(R.id.tvBESURL);
     }
 
 //    private void getCurrentTime() {
@@ -85,23 +90,6 @@ public class MeetingRooms extends Activity implements LocationListener {
 //        calendar.setTime(currentDate);
 //    }
 
-    private void getCityName() {
-        cityName = null;
-        Geocoder gcd = new Geocoder(getBaseContext(), Locale.getDefault());
-
-        List<Address> addresses;
-        try {
-            addresses = gcd.getFromLocation(latitude, longitude, 1);
-
-            if (addresses.size() > 0) {
-                System.out.println(addresses.get(0).getLocality());
-                cityName = addresses.get(0).getLocality();
-                tvCurrentLocation.setText(cityName);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 
         @Override
@@ -129,12 +117,10 @@ public class MeetingRooms extends Activity implements LocationListener {
         @Override
         protected void onPause () {
             super.onPause();
-            locationManager.removeUpdates(this);
         }
 
         @Override
         protected void onResume () {
             super.onResume();
-            locationManager.requestLocationUpdates(provider, 400, 1, this);
         }
     }

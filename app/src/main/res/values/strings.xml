@@ -23,6 +23,7 @@
     <string name="unavailable">Unavailable</string>
     <string name="gps_disabled">GPS Disabled</string>
     <string name="gps_enabled">GPS Enalbed</string>
+    <string name="gps_undetectable">Location not detected</string>
 
     <string-array name="room_status">
         <item>@string/available</item>

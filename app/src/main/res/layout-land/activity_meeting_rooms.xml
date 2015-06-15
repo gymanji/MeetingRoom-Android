@@ -27,6 +27,7 @@
             android:contentDescription="@string/kennedy_conference_room"/>
 
         <TextView
+            android:id="@+id/tvBESURL"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="95"
