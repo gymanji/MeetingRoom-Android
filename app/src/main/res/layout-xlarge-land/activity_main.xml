@@ -1,0 +1,160 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/background_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue4"
+        android:contentDescription="@string/blue_background" />
+
+    <ImageView
+        android:id="@+id/white_border"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/white"
+        android:contentDescription="@string/white_background" />
+
+    <ImageView
+        android:id="@+id/vmwLogo"
+        android:paddingTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:src="@drawable/awvmwarelogo"
+        android:contentDescription="@string/aw_logo"
+        android:layout_alignTop="@id/white_border"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/vmwLogo"
+        android:orientation="vertical"
+        android:paddingLeft="70dp"
+        android:paddingRight="70dp"
+        android:paddingTop="90dp">
+
+        <LinearLayout
+            android:id="@+id/llSSO"
+            style="@style/smallTVLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:orientation="horizontal">
+            <!--android:visibility="gone"-->
+            <!-->-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="15"
+                style="@style/lgTVLayout"
+                android:text="@string/device_SSO" />
+
+            <TextView
+                android:id="@+id/tvUserCred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/lgTVLayout"
+                android:layout_weight="65" />
+
+            <ImageView
+                android:id="@+id/ivCheck1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="15"
+                android:contentDescription="@string/check_desc"
+                android:src="@drawable/check" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llAuth"
+            style="@style/smallTVLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:orientation="horizontal">
+            <!--android:visibility="gone"-->
+            <!-->-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="15"
+                style="@style/lgTVLayout"
+                android:text="@string/auth_type" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="65"
+                style="@style/lgTVLayout"
+                android:text="@string/none" />
+
+            <ImageView
+                android:id="@+id/ivCheck2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:contentDescription="@string/check_desc"
+                android:src="@drawable/check" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llTunnel"
+            style="@style/smallTVLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:orientation="horizontal">
+            <!--android:visibility="gone"-->
+            <!-->-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="80"
+                style="@style/lgTVLayout"
+                android:text="@string/secure_tunnel" />
+
+            <ImageView
+                android:id="@+id/ivLockSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:contentDescription="@string/lock_symbol"
+                android:src="@drawable/lock" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="40"
+            android:clickable="true"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="60dp"
+            style="@style/lgTVLayout"
+            android:textStyle="bold"
+            android:text="@string/tap_to_continue" />
+        <!--android:visibility="gone"-->
+        <!--/>-->
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+
