@@ -99,35 +99,90 @@ public class MeetingRooms extends ActionBarActivity  {
     }
 
     private void getCurrentDateTime() {
-        //Date conversion
+        //Date setting
         SimpleDateFormat dateFormat = new SimpleDateFormat("MMM d, yyyy");
         Date date = new Date();
         String currentDate = dateFormat.format(date);
         tvCurrentDate.setText(currentDate);
 
-        //Time conversion
-        SimpleDateFormat timeFormat = new SimpleDateFormat("h:m a");
-        Date time = new Date();
-        String currentTime = timeFormat.format(time);
-        tvCurrentTime.setText(currentTime);
+        // Gather data for current Hour, Minute, & AM/PM
+        SimpleDateFormat hour = new SimpleDateFormat("h");
+        SimpleDateFormat minute = new SimpleDateFormat("m");
+        SimpleDateFormat ampm = new SimpleDateFormat("a");
+        Date time2 = new Date();
+        String currentTime_ampm = ampm.format(time2);
+        String currentTime_hour = hour.format(time2);
+        String currentTime_minute = minute.format(time2);
+//        Log.d("Time: ", " Hour-" + currentTime_hour + " Minute-" + currentTime_minute + " AMPM-" + currentTime_ampm);
 
+        //Parse String Minute & Hour value into Integer for calculation
+        int minute_int = 0;
+        try {
+            minute_int = Integer.parseInt(currentTime_minute);
+        } catch (NumberFormatException nfe) {
+            nfe.printStackTrace();
+        }
 
-//       SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
-//        Calendar calendar = new GregorianCalendar();
-//        int year = calendar.get(Calendar.YEAR);
-//        int month = calendar.get(Calendar.MONTH);
-//        int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
-//        String date = month + " " + dayOfMonth + ", " + year;
-//        Log.d("Time: ", date);
+        int hourStart_int = 0;
+        try {
+            hourStart_int = Integer.parseInt(currentTime_hour);
+            String hour_string = String.valueOf(hourStart_int);
+        } catch (NumberFormatException nfe) {
+            nfe.printStackTrace();
+        }
 
-//        TimeZone timeZone = TimeZone.getDefault();
-//        String tz = String.valueOf(timeZone);
-//        Log.d("Time: ", tz);
+        //Build custom Array with values depending on meeting time range and define constants
+        final int ZERO = 0, THIRTY = 30, SIXTY = 60;
+        String zeros = "00 ", thirty = "30", space = " ", colon = ":", hyphen = "-";
+        String hourInit = "0";
+        String[] ampmArray = {"AM", "PM"};
+        String[] timeArray = {hourInit, colon, zeros, space, hyphen, space, hourInit, colon, zeros, space, currentTime_ampm};
 
+        //Get nearest 30 minute time block based on current time
+        if (minute_int > ZERO && minute_int < THIRTY) {
+            timeArray[2] = thirty;
+            timeArray[8] = zeros;
+            timeArray[0] = currentTime_hour;
 
+            //Handle time rollover for non-military syntax
+            if (hourStart_int == 12) {
+                hourStart_int = 1;
+                String myNewFinalTime = String.valueOf(hourStart_int);
+                timeArray[6] = myNewFinalTime;
+
+                // Swap AM/PM values
+                if (currentTime_ampm == ampmArray[0]) {
+                    currentTime_ampm = ampmArray[1];
+                    timeArray[10] = currentTime_ampm;
+                } else {
+                    currentTime_ampm = ampmArray[0];
+                    timeArray[10] = currentTime_ampm;
+                }
+            } else {
+                hourStart_int += 1;
+                String myNewFinalTime = String.valueOf(hourStart_int);
+                timeArray[6] = myNewFinalTime;
+            }
+        } else {
+            timeArray[2] = zeros;
+            timeArray[8] = thirty;
+            hourStart_int += 1;
+            String myNewFinalTime = String.valueOf(hourStart_int);
+            timeArray[0] = myNewFinalTime;
+            timeArray[6] = myNewFinalTime;
+        }
+
+        //Loop through Array to combine new time format to place in TextView
+        StringBuilder builder = new StringBuilder();
+        for (String s : timeArray) {
+            if (builder.length() > 0) {
+                builder.append(" ");
+            }
+            builder.append(s);
+        }
+        String finalTimeString = builder.toString();
+        tvCurrentTime.setText(finalTimeString);
     }
-
-
 
         @Override
         public boolean onCreateOptionsMenu (Menu menu){
