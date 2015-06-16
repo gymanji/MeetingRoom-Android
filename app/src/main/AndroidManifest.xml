@@ -5,14 +5,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET"/>
 
-    <receiver
-        android:name=".MyReceiver"
-        android:permission="com.airwatch.admin.sdk.BROADCAST" >
-        <intent-filter>
-            <action android:name="com.myapplication.airwatchsdk.BROADCAST" />
-        </intent-filter>
-    </receiver>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -32,12 +24,6 @@
             android:label="@string/title_activity_meeting_rooms" >
         </activity>
 
-        <receiver
-            android:name=".MyReceiver"
-            android:enabled="true"
-            android:exported="true" >
-        </receiver>
-
         <service android:name=".AWSDKIntentService" >
         </service>
 
@@ -49,6 +35,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.airwatch.meetingroom.MeetingRooms" />
         </activity>
+
+        <receiver
+            android:name=".MyReceiver"
+            android:permission="com.airwatch.admin.sdk.BROADCAST" >
+            <intent-filter>
+                <action android:name="com.myapplication.airwatchsdk.BROADCAST" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
