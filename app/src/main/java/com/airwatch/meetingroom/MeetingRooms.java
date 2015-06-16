@@ -14,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -38,6 +40,8 @@ public class MeetingRooms extends ActionBarActivity  {
 
         getLocationDetails();
 
+        getCurrentDateTime();
+
         tvBESURL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +56,7 @@ public class MeetingRooms extends ActionBarActivity  {
     private void getLocationDetails() {
         double currentLongitude, currentLatitude;
         Location getLastLocation;
-        boolean gpsEnabled;
+        boolean gpsEnabled = false;
 
         LocationManager locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         getLastLocation = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
@@ -71,7 +75,7 @@ public class MeetingRooms extends ActionBarActivity  {
             try {
                 addresses = gcd.getFromLocation(currentLatitude, currentLongitude, 1);
                 if (addresses.size() > 0) {
-                    System.out.println(addresses.get(0).getLocality());
+//                    System.out.println(addresses.get(0).getLocality());
                     cityName = addresses.get(0).getLocality();
                     Log.d("GPS", cityName);
                     tvCurrentLocation.setText(cityName);
@@ -94,11 +98,34 @@ public class MeetingRooms extends ActionBarActivity  {
         tvBESURL = (TextView) findViewById(R.id.tvBESURL);
     }
 
-//    private void getCurrentTime() {
+    private void getCurrentDateTime() {
+        //Date conversion
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM d, yyyy");
+        Date date = new Date();
+        String currentDate = dateFormat.format(date);
+        tvCurrentDate.setText(currentDate);
+
+        //Time conversion
+        SimpleDateFormat timeFormat = new SimpleDateFormat("h:m a");
+        Date time = new Date();
+        String currentTime = timeFormat.format(time);
+        tvCurrentTime.setText(currentTime);
+
+
+//       SimpleDateFormat sdf = new SimpleDateFormat("yyyy MMM dd HH:mm:ss");
 //        Calendar calendar = new GregorianCalendar();
-//        Date currentDate = new Date();
-//        calendar.setTime(currentDate);
-//    }
+//        int year = calendar.get(Calendar.YEAR);
+//        int month = calendar.get(Calendar.MONTH);
+//        int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+//        String date = month + " " + dayOfMonth + ", " + year;
+//        Log.d("Time: ", date);
+
+//        TimeZone timeZone = TimeZone.getDefault();
+//        String tz = String.valueOf(timeZone);
+//        Log.d("Time: ", tz);
+
+
+    }
 
 
 
