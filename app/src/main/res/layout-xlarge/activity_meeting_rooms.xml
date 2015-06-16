@@ -327,7 +327,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:src="@drawable/roomthree"
+                    android:src="@drawable/roomfive"
                     android:contentDescription="@string/room_image"/>
 
                 <LinearLayout

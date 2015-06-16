@@ -16,7 +16,7 @@
     <string name="aw_logo">VMW Logo</string>
 
     <!--MeetingRoom Strings-->
-    <string name="bes_server_string">atl02demobes06.airwatch.demo</string>
+    <string name="bes_server_string">atl02demomgmt27.airwatch.demo</string>
     <string name="blank_default">---</string>
     <string name="available_now">Available Now</string>
     <string name="available">Available</string>
@@ -59,5 +59,8 @@
     <string name="clinton_location">TOWER 1, FLOOR 1, ROOM 101A</string>
     <string name="jefferson_conference_room">Jefferson Conference Room</string>
     <string name="jefferson_location">TOWER 3, FLOOR 31, ROOM 310F</string>
+    <string name="title_activity_web_view">WebView</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

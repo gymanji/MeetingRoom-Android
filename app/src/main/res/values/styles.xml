@@ -4,6 +4,12 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     </style>
 
+    <style name="smallLayoutImage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--<item name="android:scaleType">fitXY</item>-->
+    </style>
+
     <style name="smallTVLayout">
         <item name="android:textSize">14sp</item>
     </style>
