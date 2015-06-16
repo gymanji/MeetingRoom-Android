@@ -7,11 +7,11 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import java.io.IOException;
 import java.util.List;
@@ -37,6 +37,14 @@ public class MeetingRooms extends ActionBarActivity  {
         tvBESURL.setFocusable(true);
 
         getLocationDetails();
+
+        tvBESURL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeetingRooms.this, WebViewZ.class);
+                MeetingRooms.this.startActivity(intent);
+            }
+        });
 
 }
 

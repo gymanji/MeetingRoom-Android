@@ -3,7 +3,7 @@
     package="com.airwatch.meetingroom" >
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <receiver
         android:name=".MyReceiver"
@@ -27,7 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MeetingRooms"
             android:label="@string/title_activity_meeting_rooms" >
@@ -39,10 +38,17 @@
             android:exported="true" >
         </receiver>
 
-        <service android:name=".AWSDKIntentService">
-
+        <service android:name=".AWSDKIntentService" >
         </service>
-    </application>
 
+        <activity
+            android:name=".WebViewZ"
+            android:label="@string/title_activity_web_view"
+            android:parentActivityName=".MeetingRooms" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.airwatch.meetingroom.MeetingRooms" />
+        </activity>
+    </application>
 
 </manifest>
