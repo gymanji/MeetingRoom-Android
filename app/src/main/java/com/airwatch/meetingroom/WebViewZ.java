@@ -17,7 +17,7 @@ public class WebViewZ extends Activity {
         setContentView(R.layout.activity_webview);
 
         webView = (WebView) findViewById(R.id.webView);
-        webView.loadUrl("http://atl02demomgmt27.airwatch.demo");
+        webView.loadUrl("http://atl02demomgmt27.airwatch.demo/MeetingRoomAndroid");
 
     }
 
