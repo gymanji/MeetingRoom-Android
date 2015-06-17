@@ -135,8 +135,12 @@ public class MeetingRooms extends ActionBarActivity  {
         final int ZERO = 0, THIRTY = 30, SIXTY = 60;
         String zeros = "00 ", thirty = "30", space = " ", colon = ":", hyphen = "-";
         String hourInit = "0";
-        String[] ampmArray = {"AM", "PM"};
         String[] timeArray = {hourInit, colon, zeros, space, hyphen, space, hourInit, colon, zeros, space, currentTime_ampm};
+
+        // Swap AM/PM values at 11 - 12 rollover
+        if (hourStart_int == 11 && currentTime_ampm == "PM") {
+            timeArray[10] = "AM";
+        } else timeArray[10] = "PM";
 
         //Get nearest 30 minute time block based on current time
         if (minute_int > ZERO && minute_int < THIRTY) {
@@ -149,21 +153,13 @@ public class MeetingRooms extends ActionBarActivity  {
                 hourStart_int = 1;
                 String myNewFinalTime = String.valueOf(hourStart_int);
                 timeArray[6] = myNewFinalTime;
-
-                // Swap AM/PM values
-                if (currentTime_ampm == ampmArray[0]) {
-                    currentTime_ampm = ampmArray[1];
-                    timeArray[10] = currentTime_ampm;
-                } else {
-                    currentTime_ampm = ampmArray[0];
-                    timeArray[10] = currentTime_ampm;
-                }
             } else {
                 hourStart_int += 1;
                 String myNewFinalTime = String.valueOf(hourStart_int);
                 timeArray[6] = myNewFinalTime;
             }
         } else {
+
             timeArray[2] = zeros;
             timeArray[8] = thirty;
             hourStart_int += 1;
