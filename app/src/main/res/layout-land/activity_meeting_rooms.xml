@@ -155,10 +155,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitle"
+                        style="@style/ConferenceRoomTitleLG"
                         android:text="@string/lincoln_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitle"
+                        style="@style/ConferenceRoomSubTitleLG"
                         android:text="@string/lincoln_location" />
 
                     <TextView
@@ -214,10 +214,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitle"
+                        style="@style/ConferenceRoomTitleLG"
                         android:text="@string/kennedy_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitle"
+                        style="@style/ConferenceRoomSubTitleLG"
                         android:text="@string/kennedy_location" />
 
                     <TextView
@@ -273,10 +273,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitle"
+                        style="@style/ConferenceRoomTitleLG"
                         android:text="@string/jefferson_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitle"
+                        style="@style/ConferenceRoomSubTitleLG"
                         android:text="@string/jefferson_location" />
 
                     <TextView
@@ -332,10 +332,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitle"
+                        style="@style/ConferenceRoomTitleLG"
                         android:text="@string/clinton_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitle"
+                        style="@style/ConferenceRoomSubTitleLG"
                         android:text="@string/clinton_location" />
 
                     <TextView

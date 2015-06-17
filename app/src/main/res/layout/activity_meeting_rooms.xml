@@ -65,7 +65,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="80"
                 android:gravity="center_vertical"
-                android:text="@string/blank_default" />
+                android:text="@string/blank_default"
+                android:textSize="9sp" />
 
         </LinearLayout>
 
@@ -87,7 +88,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="40"
                 android:gravity="center_vertical"
-                android:text="TIME" />
+                android:text="TIME"
+                android:textSize="9sp" />
 
             <TextView
                 android:id="@+id/tvCurrentDate"
@@ -95,7 +97,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="40"
                 android:gravity="center_vertical|right"
-                android:text="DATE" />
+                android:text="DATE"
+                android:textSize="9sp" />
 
         </LinearLayout>
 
@@ -116,7 +119,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="80"
                 android:gravity="center_vertical"
-                android:text="@string/available_now" />
+                android:text="@string/available_now"
+                android:textSize="9sp" />
 
         </LinearLayout>
 
@@ -144,7 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:src="@drawable/roomone"
+                    android:src="@drawable/roomonesmall"
                     android:contentDescription="@string/room_image"/>
 
                 <LinearLayout
@@ -166,7 +170,8 @@
                         android:layout_height="match_parent"
                         android:paddingLeft="20dp"
                         android:text="@string/lincoln_details"
-                        android:gravity="center_vertical" />
+                        android:gravity="center_vertical"
+                        android:textSize="8sp" />
 
                 </LinearLayout>
 
@@ -187,7 +192,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/available"
                         android:gravity="bottom|right"
-                        android:textSize="16sp"/>
+                        android:textSize="12sp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -203,7 +208,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:src="@drawable/roomtwo"
+                    android:src="@drawable/roomtwosmall"
                     android:contentDescription="@string/room_image"/>
 
                 <LinearLayout
@@ -225,7 +230,8 @@
                         android:layout_height="match_parent"
                         android:paddingLeft="20dp"
                         android:text="@string/kennedy_details"
-                        android:gravity="center_vertical" />
+                        android:gravity="center_vertical"
+                        android:textSize="8sp" />
 
                 </LinearLayout>
 
@@ -246,7 +252,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/unavailable"
                         android:gravity="bottom|right"
-                        android:textSize="16sp"/>
+                        android:textSize="12sp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -262,7 +268,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:src="@drawable/roomthree"
+                    android:src="@drawable/roomthreesmall"
                     android:contentDescription="@string/room_image"/>
 
                 <LinearLayout
@@ -284,7 +290,8 @@
                         android:layout_height="match_parent"
                         android:paddingLeft="20dp"
                         android:text="@string/kennedy_details"
-                        android:gravity="center_vertical" />
+                        android:gravity="center_vertical"
+                        android:textSize="8sp" />
 
                 </LinearLayout>
 
@@ -305,7 +312,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/available"
                         android:gravity="bottom|right"
-                        android:textSize="16sp"/>
+                        android:textSize="12sp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -321,7 +328,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:src="@drawable/roomfive"
+                    android:src="@drawable/roomfivesmall"
                     android:contentDescription="@string/room_image"/>
 
                 <LinearLayout
@@ -343,7 +350,8 @@
                         android:layout_height="match_parent"
                         android:paddingLeft="20dp"
                         android:text="@string/kennedy_details"
-                        android:gravity="center_vertical" />
+                        android:gravity="center_vertical"
+                        android:textSize="8sp" />
 
                 </LinearLayout>
 
@@ -364,7 +372,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/available"
                         android:gravity="bottom|right"
-                        android:textSize="16sp"/>
+                        android:textSize="12sp"/>
                 </LinearLayout>
 
             </LinearLayout>

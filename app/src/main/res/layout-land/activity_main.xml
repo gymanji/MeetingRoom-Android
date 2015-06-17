@@ -49,9 +49,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:orientation="horizontal">
-            <!--android:visibility="gone"-->
-            <!-->-->
+            android:orientation="horizontal"
+            android:visibility="invisible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -80,9 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:orientation="horizontal">
-            <!--android:visibility="gone"-->
-            <!-->-->
+            android:orientation="horizontal"
+            android:visibility="invisible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -111,9 +109,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="20"
-            android:orientation="horizontal">
-            <!--android:visibility="gone"-->
-            <!-->-->
+            android:orientation="horizontal"
+            android:visibility="invisible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -140,9 +137,8 @@
             android:clickable="true"
             android:gravity="center_horizontal|bottom"
             android:paddingBottom="20dp"
-            android:text="@string/tap_to_continue" />
-        <!--android:visibility="gone"-->
-        <!--/>-->
+            android:text="@string/tap_to_continue"
+            android:visibility="invisible" />
 
     </LinearLayout>
 

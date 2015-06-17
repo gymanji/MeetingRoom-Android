@@ -6,12 +6,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.Iterator;
+import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
 
     private TextView tvContinue;
+    LinearLayout llAuth, llTunnel, llSSO;
+    LinearLayout[] linearLayoutsArray = {llAuth, llTunnel, llSSO};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         createTextViewReferences();
+        tvContinue.setVisibility(View.VISIBLE);
+//        magicallyAppear();
 
         tvContinue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,8 +38,41 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    private void magicallyAppear() {
+        for (final LinearLayout l : linearLayoutsArray) {
+            Thread timer = new Thread() {
+                public void run() {
+                    try {
+                        sleep(200);
+                    } catch (InterruptedException ie) {
+                        ie.printStackTrace();
+                    } finally {
+                        l.setVisibility(View.VISIBLE);
+                    }
+                }
+            };
+            timer.start();
+        }
+
+//        Thread timer2 = new Thread() {
+//            public void run() {
+//                try {
+//                    sleep(400);
+//                } catch (InterruptedException ie) {
+//                    ie.printStackTrace();
+//                } finally {
+//                    tvContinue.setVisibility(View.VISIBLE);
+//                }
+//            }
+//        };
+//        timer2.start();
+    }
+
     private void createTextViewReferences() {
         tvContinue = (TextView) findViewById(R.id.tvContinue);
+        llAuth = (LinearLayout) findViewById(R.id.llAuth);
+        llSSO = (LinearLayout) findViewById(R.id.llSSO);
+        llTunnel = (LinearLayout) findViewById(R.id.llTunnel);
     }
 
 

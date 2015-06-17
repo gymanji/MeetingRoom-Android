@@ -144,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:src="@drawable/roomone"
+                    android:src="@drawable/roomonesmall"
                     android:contentDescription="@string/room_image"/>
 
                 <LinearLayout
@@ -155,10 +155,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitle"
+                        style="@style/ConferenceRoomTitleLG"
                         android:text="@string/lincoln_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitle"
+                        style="@style/ConferenceRoomSubTitleLG"
                         android:text="@string/lincoln_location" />
 
                     <TextView
@@ -203,7 +203,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:src="@drawable/roomtwo"
+                    android:src="@drawable/roomtwosmall"
                     android:contentDescription="@string/room_image"/>
 
                 <LinearLayout
@@ -214,10 +214,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitle"
+                        style="@style/ConferenceRoomTitleLG"
                         android:text="@string/kennedy_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitle"
+                        style="@style/ConferenceRoomSubTitleLG"
                         android:text="@string/kennedy_location" />
 
                     <TextView
@@ -262,7 +262,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:src="@drawable/roomthree"
+                    android:src="@drawable/roomthreesmall"
                     android:contentDescription="@string/room_image"/>
 
                 <LinearLayout
@@ -273,10 +273,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitle"
+                        style="@style/ConferenceRoomTitleLG"
                         android:text="@string/jefferson_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitle"
+                        style="@style/ConferenceRoomSubTitleLG"
                         android:text="@string/jefferson_location" />
 
                     <TextView
@@ -321,7 +321,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="10"
-                    android:src="@drawable/roomfive"
+                    android:src="@drawable/roomfivesmall"
                     android:contentDescription="@string/room_image"/>
 
                 <LinearLayout
@@ -332,10 +332,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitle"
+                        style="@style/ConferenceRoomTitleLG"
                         android:text="@string/clinton_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitle"
+                        style="@style/ConferenceRoomSubTitleLG"
                         android:text="@string/clinton_location" />
 
                     <TextView
