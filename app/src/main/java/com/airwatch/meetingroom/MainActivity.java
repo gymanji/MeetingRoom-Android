@@ -3,21 +3,23 @@ package com.airwatch.meetingroom;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.Iterator;
-import java.util.List;
+
+import static android.view.View.VISIBLE;
 
 
 public class MainActivity extends ActionBarActivity {
 
     private TextView tvContinue;
-    LinearLayout llAuth, llTunnel, llSSO;
-    LinearLayout[] linearLayoutsArray = {llAuth, llTunnel, llSSO};
+    private LinearLayout llAuth, llTunnel, llSSO;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +27,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         createTextViewReferences();
-        tvContinue.setVisibility(View.VISIBLE);
-//        magicallyAppear();
+        magicallyAppear();
+//        tvContinue.setVisibility(VISIBLE);
 
         tvContinue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,42 +41,44 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void magicallyAppear() {
-        for (final LinearLayout l : linearLayoutsArray) {
-            Thread timer = new Thread() {
-                public void run() {
-                    try {
-                        sleep(200);
-                    } catch (InterruptedException ie) {
-                        ie.printStackTrace();
-                    } finally {
-                        l.setVisibility(View.VISIBLE);
-                    }
+
+        LinearLayout[] linearLayoutsArray = {llSSO, llAuth, llTunnel};
+        int delayMillis = 800;
+        for(int i=0; i<linearLayoutsArray.length; i++){
+            final LinearLayout l = linearLayoutsArray[i];
+            l.postDelayed(new Runnable(){
+                public void run(){
+                    l.setVisibility(View.VISIBLE);
                 }
-            };
-            timer.start();
+            }, delayMillis*i);
         }
 
-//        Thread timer2 = new Thread() {
-//            public void run() {
-//                try {
-//                    sleep(400);
-//                } catch (InterruptedException ie) {
-//                    ie.printStackTrace();
-//                } finally {
-//                    tvContinue.setVisibility(View.VISIBLE);
-//                }
-//            }
-//        };
-//        timer2.start();
+        int delayMillis2 = 2400;
+        tvContinue.postDelayed(new Runnable() {
+            public void run() {
+                tvContinue.setVisibility(View.VISIBLE);
+            }
+        }, delayMillis2);
     }
 
     private void createTextViewReferences() {
-        tvContinue = (TextView) findViewById(R.id.tvContinue);
         llAuth = (LinearLayout) findViewById(R.id.llAuth);
         llSSO = (LinearLayout) findViewById(R.id.llSSO);
         llTunnel = (LinearLayout) findViewById(R.id.llTunnel);
+        tvContinue = (TextView) findViewById(R.id.tvContinue);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
