@@ -43,6 +43,13 @@
         android:paddingRight="70dp"
         android:paddingTop="90dp">
 
+        <TextView
+            android:id="@+id/tvLoadingSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/loading1"
+            android:textSize="16sp" />
+
         <LinearLayout
             android:id="@+id/llSSO"
             style="@style/smallTVLayout"
@@ -50,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="20"
             android:orientation="horizontal"
-            android:visibility="invisible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="20"
             android:orientation="horizontal"
-            android:visibility="invisible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -114,7 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="20"
             android:orientation="horizontal"
-            android:visibility="invisible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"

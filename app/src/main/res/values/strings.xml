@@ -6,7 +6,7 @@
     <string name="title_activity_meeting_rooms">MeetingRooms</string>
     <string name="device_SSO">Device SSO: </string>
     <string name="auth_type">Authentication Type:</string>
-    <string name="none">None</string>
+    <string name="none">Integrated Auth</string>
     <string name="secure_tunnel">Secure Tunnel Established: </string>
     <string name="tap_to_continue">Tap to continue</string>
     <string name="check_desc">Checkmark</string>
@@ -14,6 +14,9 @@
     <string name="blue_background">Blue background</string>
     <string name="white_background">White background</string>
     <string name="aw_logo">VMW Logo</string>
+    <string name="loading1">Device SSO &amp; MAG Tunnel Initiating...</string>
+    <!--<string name="loading2">Loading application settings..</string>-->
+    <!--<string name="loading3">Loading application settings...</string>-->
 
     <!--MeetingRoom Strings-->
     <string name="bes_server_string">atl02demomgmt27.airwatch.demo</string>

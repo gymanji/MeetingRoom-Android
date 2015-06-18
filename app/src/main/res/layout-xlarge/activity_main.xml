@@ -33,6 +33,7 @@
         android:paddingTop="8dp"
         android:src="@drawable/awvmwarelogo" />
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,6 +43,13 @@
         android:paddingRight="70dp"
         android:paddingTop="70dp">
 
+        <TextView
+            android:id="@+id/tvLoadingSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/loading1"
+            android:textSize="16sp" />
+
         <LinearLayout
             android:id="@+id/llSSO"
             style="@style/lgTVLayout"
@@ -50,7 +58,7 @@
             android:layout_weight="20"
             android:orientation="horizontal"
             android:paddingTop="50dp"
-            android:visibility="invisible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -75,6 +83,8 @@
                 android:src="@drawable/check" />
         </LinearLayout>
 
+
+
         <LinearLayout
             android:id="@+id/llAuth"
             style="@style/lgTVLayout"
@@ -82,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="20"
             android:orientation="horizontal"
-            android:visibility="invisible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -114,7 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="20"
             android:orientation="horizontal"
-            android:visibility="invisible">
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
