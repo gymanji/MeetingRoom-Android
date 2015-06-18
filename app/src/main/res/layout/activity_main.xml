@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="20"
             android:orientation="horizontal"
-            android:visibility="gone">
+            android:visibility="invisible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="20"
             android:orientation="horizontal"
-            android:visibility="gone">
+            android:visibility="invisible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -113,11 +113,11 @@
         <LinearLayout
             android:id="@+id/llTunnel"
             style="@style/smallTVLayout"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="20"
             android:orientation="horizontal"
-            android:visibility="gone">
+            android:visibility="invisible">
 
             <TextView
                 android:layout_width="wrap_content"

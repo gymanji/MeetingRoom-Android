@@ -8,6 +8,7 @@
     <string name="auth_type">Authentication Type:</string>
     <string name="none">Integrated Auth</string>
     <string name="secure_tunnel">Secure Tunnel Established: </string>
+    <string name="magUrl">mag.airwdemo.com</string>
     <string name="tap_to_continue">Tap to continue</string>
     <string name="check_desc">Checkmark</string>
     <string name="lock_symbol">Lock symbol</string>

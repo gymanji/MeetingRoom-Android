@@ -1,8 +1,10 @@
 package com.airwatch.meetingroom;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,9 +14,9 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
-    private TextView tvContinue, tvUserCred;
+    private TextView tvLoadingSettings, tvContinue, tvUserCred;
     private LinearLayout llAuth, llTunnel, llSSO;
-
+    final String username = java.lang.System.getProperty("aw-username");
 
 
     @Override
@@ -24,7 +26,6 @@ public class MainActivity extends ActionBarActivity {
 
         createTextViewReferences();
         getSetAWUsername();
-        magicallyAppear();
 
         tvContinue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,38 +38,62 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void getSetAWUsername() {
-        String username = java.lang.System.getProperty("aw-username");
-        if (username == null) username = "jdoe";
-        tvUserCred.setText(username);
+
+        Handler mHandler = new Handler();
+        int delayMillis = 2000;
+
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Log.d("username", "inside run() method");
+                    tvLoadingSettings.setVisibility(View.GONE);
+                    tvUserCred.setText(username);
+                }
+            }, delayMillis);
+            magicallyAppear();
+
     }
 
     private void magicallyAppear() {
 
-        LinearLayout[] linearLayoutsArray = {llSSO, llAuth, llTunnel};
-        int delayMillis = 800;
-        for(int i=0; i<linearLayoutsArray.length; i++){
-            final LinearLayout l = linearLayoutsArray[i];
-            l.postDelayed(new Runnable(){
-                public void run(){
-                    l.setVisibility(View.VISIBLE);
-                }
-            }, delayMillis*i);
-        }
+        Handler handler = new Handler();
+        int delayMillis0 = 2050;
 
-        int delayMillis2 = 2400;
-        tvContinue.postDelayed(new Runnable() {
+        handler.postDelayed(new Runnable() {
+            @Override
             public void run() {
-                tvContinue.setVisibility(View.VISIBLE);
+
+                LinearLayout[] linearLayoutsArray = {llSSO, llAuth, llTunnel};
+                int delayMillis = 400;
+                for(int i=0; i<linearLayoutsArray.length; i++){
+                    final LinearLayout l = linearLayoutsArray[i];
+                    l.postDelayed(new Runnable(){
+                        public void run(){
+                            l.setVisibility(View.VISIBLE);
+                        }
+                    }, delayMillis*i);
+                }
+
+                int delayMillis2 = 1500;
+                tvContinue.postDelayed(new Runnable() {
+                    public void run() {
+                        tvContinue.setVisibility(View.VISIBLE);
+                    }
+                }, delayMillis2);
+
             }
-        }, delayMillis2);
+        }, delayMillis0);
+
     }
 
     private void createTextViewReferences() {
+        tvLoadingSettings = (TextView) findViewById(R.id.tvLoadingSettings);
         llAuth = (LinearLayout) findViewById(R.id.llAuth);
         llSSO = (LinearLayout) findViewById(R.id.llSSO);
         llTunnel = (LinearLayout) findViewById(R.id.llTunnel);
         tvContinue = (TextView) findViewById(R.id.tvContinue);
         tvUserCred = (TextView) findViewById(R.id.tvUserCred);
+
     }
 
     @Override
