@@ -24,9 +24,6 @@
             android:label="@string/title_activity_meeting_rooms" >
         </activity>
 
-        <service android:name=".AWSDKIntentService" >
-        </service>
-
         <activity
             android:name=".WebViewZ"
             android:label="@string/title_activity_web_view"
@@ -35,14 +32,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.airwatch.meetingroom.MeetingRooms" />
         </activity>
-
-        <receiver
-            android:name=".MyReceiver"
-            android:permission="com.airwatch.admin.sdk.BROADCAST" >
-            <intent-filter>
-                <action android:name="com.myapplication.airwatchsdk.BROADCAST" />
-            </intent-filter>
-        </receiver>
 
     </application>
 
