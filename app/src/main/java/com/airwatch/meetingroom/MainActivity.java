@@ -3,7 +3,6 @@ package com.airwatch.meetingroom;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,12 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-import static android.view.View.VISIBLE;
-
-
 public class MainActivity extends ActionBarActivity {
 
-    private TextView tvContinue;
+    private TextView tvContinue, tvUserCred;
     private LinearLayout llAuth, llTunnel, llSSO;
 
 
@@ -27,8 +23,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         createTextViewReferences();
+        getSetAWUsername();
         magicallyAppear();
-//        tvContinue.setVisibility(VISIBLE);
 
         tvContinue.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +34,12 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+    }
+
+    private void getSetAWUsername() {
+        String username = java.lang.System.getProperty("aw-username");
+        if (username == null) username = "jdoe";
+        tvUserCred.setText(username);
     }
 
     private void magicallyAppear() {
@@ -66,6 +68,7 @@ public class MainActivity extends ActionBarActivity {
         llSSO = (LinearLayout) findViewById(R.id.llSSO);
         llTunnel = (LinearLayout) findViewById(R.id.llTunnel);
         tvContinue = (TextView) findViewById(R.id.tvContinue);
+        tvUserCred = (TextView) findViewById(R.id.tvUserCred);
     }
 
     @Override
