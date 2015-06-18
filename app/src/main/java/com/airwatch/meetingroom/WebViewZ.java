@@ -1,15 +1,20 @@
 package com.airwatch.meetingroom;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 
 public class WebViewZ extends Activity {
 
     private WebView webView;
+    String url = "http://atl02demobes06.airwatch.demo/MeetingRoomAndroid";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +22,9 @@ public class WebViewZ extends Activity {
         setContentView(R.layout.activity_webview);
 
         webView = (WebView) findViewById(R.id.webView);
-        webView.loadUrl("http://atl02demomgmt27.airwatch.demo/MeetingRoomAndroid");
+        webView.setWebViewClient(new WebViewClient());
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.loadUrl(url);
 
     }
 
