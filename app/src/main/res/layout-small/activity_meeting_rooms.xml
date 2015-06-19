@@ -151,22 +151,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="10dp"
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitleLG"
+                        style="@style/ConferenceRoomTitle"
                         android:text="@string/lincoln_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitleLG"
+                        style="@style/ConferenceRoomSubTitle"
                         android:text="@string/lincoln_location" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
                         android:text="@string/lincoln_details"
-                        android:gravity="center_vertical" />
+                        android:gravity="center_vertical"
+                        android:textSize="9sp" />
 
                 </LinearLayout>
 
@@ -187,7 +188,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/available"
                         android:gravity="bottom|right"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -210,22 +211,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="10dp"
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitleLG"
+                        style="@style/ConferenceRoomTitle"
                         android:text="@string/kennedy_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitleLG"
+                        style="@style/ConferenceRoomSubTitle"
                         android:text="@string/kennedy_location" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
                         android:text="@string/kennedy_details"
-                        android:gravity="center_vertical" />
+                        android:gravity="center_vertical"
+                        android:textSize="9sp" />
 
                 </LinearLayout>
 
@@ -246,7 +248,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/unavailable"
                         android:gravity="bottom|right"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -269,22 +271,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="10dp"
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitleLG"
+                        style="@style/ConferenceRoomTitle"
                         android:text="@string/jefferson_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitleLG"
+                        style="@style/ConferenceRoomSubTitle"
                         android:text="@string/jefferson_location" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
                         android:text="@string/kennedy_details"
-                        android:gravity="center_vertical" />
+                        android:gravity="center_vertical"
+                        android:textSize="9sp" />
 
                 </LinearLayout>
 
@@ -305,7 +308,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/available"
                         android:gravity="bottom|right"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -328,22 +331,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="40"
-                    android:paddingLeft="20dp"
+                    android:paddingLeft="10dp"
                     android:orientation="vertical">
 
                     <TextView
-                        style="@style/ConferenceRoomTitleLG"
+                        style="@style/ConferenceRoomTitle"
                         android:text="@string/clinton_conference_room" />
                     <TextView
-                        style="@style/ConferenceRoomSubTitleLG"
+                        style="@style/ConferenceRoomSubTitle"
                         android:text="@string/clinton_location" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingLeft="20dp"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="5dp"
                         android:text="@string/kennedy_details"
-                        android:gravity="center_vertical" />
+                        android:gravity="center_vertical"
+                        android:textSize="9sp" />
 
                 </LinearLayout>
 
@@ -364,7 +368,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/available"
                         android:gravity="bottom|right"
-                        android:textSize="16sp"/>
+                        android:textSize="14sp"/>
                 </LinearLayout>
 
             </LinearLayout>
