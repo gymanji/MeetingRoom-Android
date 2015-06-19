@@ -150,7 +150,7 @@
             android:clickable="true"
             android:gravity="center_horizontal|bottom"
             android:paddingBottom="60dp"
-            style="@style/lgTVLayout"
+            style="@style/largeContinue"
             android:textStyle="bold"
             android:text="@string/tap_to_continue"
             android:visibility="invisible" />

@@ -147,7 +147,8 @@
             android:paddingBottom="20dp"
             android:text="@string/tap_to_continue"
             android:visibility="invisible"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            style="@style/smallContinue"/>
 
     </LinearLayout>
 

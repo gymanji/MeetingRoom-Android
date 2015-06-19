@@ -155,7 +155,7 @@
             android:paddingBottom="40dp"
             android:text="@string/tap_to_continue"
             android:textStyle="bold"
-            style="@style/lgTVLayout"
+            style="@style/largeContinue"
             android:visibility="invisible" />
 
     </LinearLayout>
