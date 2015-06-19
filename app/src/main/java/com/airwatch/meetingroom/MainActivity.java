@@ -47,7 +47,7 @@ public class MainActivity extends ActionBarActivity {
                 public void run() {
                     Log.d("username", "inside run() method");
                     tvLoadingSettings.setVisibility(View.GONE);
-                    tvUserCred.setText(username);
+                    if (username != null) tvUserCred.setText(username);
                 }
             }, delayMillis);
             magicallyAppear();

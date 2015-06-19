@@ -16,8 +16,7 @@
     <string name="white_background">White background</string>
     <string name="aw_logo">VMW Logo</string>
     <string name="loading1">Device SSO &amp; MAG Tunnel Initiating...</string>
-    <!--<string name="loading2">Loading application settings..</string>-->
-    <!--<string name="loading3">Loading application settings...</string>-->
+    <string name="default_user">AIRWATCHDEMO\jdoe</string>
 
     <!--MeetingRoom Strings-->
     <string name="bes_server_string">atl02demomgmt27.airwatch.demo</string>
