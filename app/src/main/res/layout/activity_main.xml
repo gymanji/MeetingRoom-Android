@@ -61,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="15"
+                android:layout_weight="20"
                 android:text="@string/device_SSO" />
 
             <TextView
@@ -93,7 +93,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="15"
+                android:layout_weight="20"
                 android:text="@string/auth_type" />
 
             <TextView
@@ -106,7 +106,7 @@
                 android:id="@+id/ivCheck2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="20"
+                android:layout_weight="18"
                 android:contentDescription="@string/check_desc"
                 android:src="@drawable/check" />
         </LinearLayout>
@@ -130,7 +130,7 @@
                 android:id="@+id/ivLockSymbol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="20"
+                android:layout_weight="15"
                 android:contentDescription="@string/lock_symbol"
                 android:src="@drawable/lock" />
         </LinearLayout>

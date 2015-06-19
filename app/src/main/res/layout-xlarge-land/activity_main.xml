@@ -110,7 +110,7 @@
                 android:id="@+id/ivCheck2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="20"
+                android:layout_weight="16"
                 android:contentDescription="@string/check_desc"
                 android:src="@drawable/check" />
         </LinearLayout>
@@ -135,7 +135,7 @@
                 android:id="@+id/ivLockSymbol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="20"
+                android:layout_weight="15"
                 android:contentDescription="@string/lock_symbol"
                 android:src="@drawable/lock" />
         </LinearLayout>
