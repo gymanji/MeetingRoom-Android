@@ -16,10 +16,10 @@
     <string name="white_background">White background</string>
     <string name="aw_logo">VMW Logo</string>
     <string name="loading1">Device SSO &amp; MAG Tunnel Initiating...</string>
-    <string name="default_user">AIRWATCHDEMO\jdoe</string>
+    <string name="default_user">AIRWATCHDEMO\\jdoe</string>
 
     <!--MeetingRoom Strings-->
-    <string name="bes_server_string">atl02demomgmt27.airwatch.demo</string>
+    <string name="bes_server_string">atl02demobes06.airwatch.demo</string>
     <string name="blank_default">---</string>
     <string name="available_now">Available Now</string>
     <string name="available">Available</string>
@@ -32,7 +32,6 @@
         <item>@string/available</item>
         <item>@string/unavailable</item>
     </string-array>
-
 
     <string name="location_symbol">Location Symbol</string>
     <string name="calendar_symbol">Calendar Symbol</string>
